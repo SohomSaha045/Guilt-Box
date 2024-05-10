@@ -24,7 +24,7 @@ export function LoginForm(props: any) {
     try {
       const data: any = await axios.post(
         // 'https://guilt-box-api.vercel.app/login'
-        "http://localhost:3000/login",
+        "https://guilt-box-api.vercel.app/login",
         {
           email: email,
           password: password,

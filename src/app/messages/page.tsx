@@ -18,7 +18,7 @@ export default function Home() {
   const [messages, setMessages] = useState([]);
 
   const fetchMessages = async () => {
-    const res = await axios.get("http://localhost:3000/messages", {
+    const res = await axios.get("https://guilt-box-api.vercel.app/messages", {
       withCredentials: true,
     });
     console.log(res);

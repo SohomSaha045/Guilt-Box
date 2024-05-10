@@ -12,7 +12,7 @@ export default function Home() {
   const [loading, isLoading] = useState(false);
   const [college, setCollege] = useState();
   const fetchCollege = async () => {
-    const col: any = await axios.get("http://localhost:3000/colleges");
+    const col: any = await axios.get("https://guilt-box-api.vercel.app/colleges");
     console.log(col.data);
     setCollege(col.data);
     

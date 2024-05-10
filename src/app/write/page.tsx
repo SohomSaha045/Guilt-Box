@@ -26,7 +26,7 @@ export default function Home() {
     }
     try{
       const data:any= await axios.post(
-        "http://localhost:3000/messages",
+        "https://guilt-box-api.vercel.app/messages",
         {
           'message': inputStr
         },

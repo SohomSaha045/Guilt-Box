@@ -33,7 +33,7 @@ export default function Home(obj: parameter) {
   const fetchMessage = async () => {
     try {
       const res = await axios.put(
-        "http://localhost:3000/message",
+        "https://guilt-box-api.vercel.app/message",
         {
           messageId: obj.params.id,
         },
@@ -56,7 +56,7 @@ export default function Home(obj: parameter) {
     }
     try {
       const res = await axios.post(
-        "http://localhost:3000/comments",
+        "https://guilt-box-api.vercel.app/comments",
         {
           id: obj.params.id,
           comment: t,
@@ -73,7 +73,7 @@ export default function Home(obj: parameter) {
   };
   const fetchComments = async () => {
     const res = await axios.put(
-      "http://localhost:3000/comments",
+      "https://guilt-box-api.vercel.app/comments",
       {
         id: obj.params.id,
       },

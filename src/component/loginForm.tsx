@@ -38,7 +38,9 @@ export function LoginForm(props: any) {
    
       var x = cookies.split("=");
       
-      setCookie("UserToken", x[1]);
+      setCookie("UserToken", x[1],{
+        sameSite:'lax'
+      });
       
       
 

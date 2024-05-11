@@ -11,6 +11,7 @@ import { navigateToComments } from "@/utils/actions";
 import Link from "next/link";
 import AppContext from "@/context";
 import { LogOut } from "@/utils/logOut";
+import { getCookie, setCookie } from "cookies-next";
 
 export default function Home() {
   const context = useContext(AppContext);
@@ -18,9 +19,19 @@ export default function Home() {
   const [messages, setMessages] = useState([]);
 
   const fetchMessages = async () => {
-    const res = await axios.get("https://guilt-box-api.vercel.app/messages", {
-      withCredentials: true,
-    });
+    const d = getCookie("UserToken");
+    const res = await axios.get(
+      "https://guilt-box-api.vercel.app/messages",
+      // "http://localhost:3000/messages",
+
+      {
+        withCredentials: true,
+        headers: {
+          'Authorization': `${d}`,
+          "Content-Type": "application/json",
+        },
+      }
+    );
     console.log(res);
     setMessages(res.data);
   };
@@ -30,7 +41,7 @@ export default function Home() {
     fetchMessages();
     isLoading(false);
   }, []);
-  
+
   const showComments = async (id: string) => {
     console.log(id);
     navigateToComments(id);

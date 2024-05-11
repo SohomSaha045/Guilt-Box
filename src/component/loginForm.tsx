@@ -1,5 +1,5 @@
 "use client";
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { Label } from "./ui/label";
 import { Input } from "./ui/input";
 import { cn } from "@/utils/cn";
@@ -8,9 +8,13 @@ import Link from "next/link";
 import Loader from "@/loader";
 import { getCookie, setCookie } from "cookies-next";
 import { navigate } from '../utils/actions';
+import AppContext from "@/context";
 export function LoginForm(props: any) {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const context = useContext(AppContext);
+
+
 
   const [loading, isLoading] = useState(false);
 
@@ -25,6 +29,9 @@ export function LoginForm(props: any) {
       const data: any = await axios.post(
         // 'https://guilt-box-api.vercel.app/login'
         "https://guilt-box-api.vercel.app/login",
+      // "http://localhost:3000/login",
+
+        // "/login",
         {
           email: email,
           password: password,
@@ -41,7 +48,6 @@ export function LoginForm(props: any) {
       setCookie("UserToken", x[1],{
         sameSite:'lax'
       });
-      
       
 
       console.log(data);

@@ -11,6 +11,7 @@ import AppContext from "@/context";
 import axios from "axios";
 import Link from "next/link";
 import { navigateToComments } from "@/utils/actions";
+import { getCookie } from "cookies-next";
 
 interface parameter {
   params: {
@@ -31,6 +32,8 @@ export default function Home(obj: parameter) {
   const [display, setDisplay] = useState("");
   const [t, setText] = useState("");
   const fetchMessage = async () => {
+    const d = getCookie("UserToken");
+
     try {
       const res = await axios.put(
         "https://guilt-box-api.vercel.app/message",
@@ -39,6 +42,10 @@ export default function Home(obj: parameter) {
         },
         {
           withCredentials: true,
+          headers: {
+            'Authorization': `${d}`,
+            "Content-Type": "application/json",
+          },
         }
       );
       setText("");
@@ -50,6 +57,8 @@ export default function Home(obj: parameter) {
     }
   };
   const postComment = async () => {
+    const d = getCookie("UserToken");
+
     if (t == "") {
       alert("Empty comment");
       return;
@@ -63,6 +72,10 @@ export default function Home(obj: parameter) {
         },
         {
           withCredentials: true,
+          headers: {
+            'Authorization': `${d}`,
+            "Content-Type": "application/json",
+          },
         }
       );
       setText("");
@@ -72,6 +85,8 @@ export default function Home(obj: parameter) {
     }
   };
   const fetchComments = async () => {
+    const d = getCookie("UserToken");
+
     const res = await axios.put(
       "https://guilt-box-api.vercel.app/comments",
       {
@@ -79,6 +94,10 @@ export default function Home(obj: parameter) {
       },
       {
         withCredentials: true,
+        headers: {
+          'Authorization': `${d}`,
+          "Content-Type": "application/json",
+        },
       }
     );
 

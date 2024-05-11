@@ -10,15 +10,7 @@ import { LoginForm } from "@/component/loginForm";
 export default function Home() {
   const [loading, isLoading] = useState(false);
   const [college, setCollege] = useState();
-  const fetchCollege = async () => {
-    const col: any = await axios.get(
-      "https://guilt-box-api.vercel.app/login"
-    );
-    console.log(col.data);
-    // setCollege(col.data);
-    // const me:any =await axios.get("http://localhost:3000/messages");
-    // console.log(me);
-  };
+  
   useEffect(() => {
     isLoading(true);
     // fetchCollege();

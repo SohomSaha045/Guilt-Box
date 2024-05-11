@@ -8,6 +8,7 @@ import { useState } from "react";
 import Picker from "emoji-picker-react";
 import axios from "axios";
 import { navigate } from '../../utils/actions';
+import { getCookie } from "cookies-next";
 
 
 
@@ -25,13 +26,19 @@ export default function Home() {
       return;
     }
     try{
+      const d = getCookie("UserToken");
       const data:any= await axios.post(
         "https://guilt-box-api.vercel.app/messages",
+        // "http://localhost:3000/messages",
         {
           'message': inputStr
         },
         {
-          withCredentials: true
+          withCredentials: true,
+          headers: {
+            'Authorization': `${d}`,
+            "Content-Type": "application/json",
+          },
         }
       );
       alert("Message Posted !!!");

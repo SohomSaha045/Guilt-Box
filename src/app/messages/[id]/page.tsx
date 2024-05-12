@@ -181,7 +181,7 @@ export default function Home(obj: parameter) {
           </div>
 
 
-          <div className="flex flex-col-reverse md:flex-col lg:flex-col w-full md:w-[50%] lg:w-[50%] h-screen">
+          <div className="flex flex-col w-full md:w-[50%] lg:w-[50%] h-screen">
             <div className="h-[78%] overflow-auto">
               <div className="p-4 font-[800] mt-8 mb-4">{`Comments (${comment.length})`}</div>
               {comment.map((item: com) => {

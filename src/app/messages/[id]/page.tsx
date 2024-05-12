@@ -128,22 +128,23 @@ export default function Home(obj: parameter) {
         </div>
       ) : (
         <>
-          <div className="h-screen w-full md:w-[50%] m-0 flex flex-col">
-            <div className="h-[55%] bg-blue-2 00 mt-16 mx-8 border-2 border-black rounded-md p-4 font-[600] outline shadow-[0_35px_60px_-15px_rgba(0,0,0,0.3)] overflow-auto">
+          <div className=" h-auto md:h-screen lg:h-screen w-full md:w-[50%] m-0 flex flex-col">
+            <div className="relative h-[220px] md:h-[55%] lg:h-[55%] bg-blue-2 00 mt-16 mx-5 border-2 border-black rounded-md p-2 font-[600] outline shadow-[0_35px_60px_-15px_rgba(0,0,0,0.3)] overflow-auto">
               {/* <div>{context.message}</div> */}
-              <div className="w-full flex justify-between pl-2 pr-2 items-start">
+              <div className=" w-full flex justify-between items-start">
                 <div className="w-[80%]"> {mess} </div>
-                <h2 className="w-[20%] ml-auto mr-0 p-0">- Anonymous</h2>
+                <div className="w-[20%] ml-auto mr-0 p-0 text-sm flex justify-start items-center">
+                  - Anonymous
+                </div>
               </div>
             </div>
             <div className="flex flex-col">
-
-
               <div className="w-full flex flex-row pt-5 pl-5 pr-5 justify-center items-center">
-
-
                 <div className="w-[50%] flex flex-row justify-center items-center text-lg font-[800] mx-4 py-2 px-4 bg-red-400 rounded-lg border-[3px] border-black hover:cursor-pointer">
-                  <Link href="/messages" className="flex flex-row justify-center items-center">
+                  <Link
+                    href="/messages"
+                    className="flex flex-row justify-center items-center"
+                  >
                     <Image
                       src={hand}
                       alt="makrer"
@@ -153,9 +154,11 @@ export default function Home(obj: parameter) {
                   </Link>
                 </div>
 
-
                 <div className="w-[50%] flex flex-row justify-center items-center text-lg font-[800] mx-4 py-2 px-4 bg-red-400 rounded-lg border-[3px] border-black hover:cursor-pointer ">
-                  <Link href="/write" className="flex flex-row justify-center items-center">
+                  <Link
+                    href="/write"
+                    className="flex flex-row justify-center items-center"
+                  >
                     <Image
                       src={write}
                       alt="makrer"
@@ -164,22 +167,14 @@ export default function Home(obj: parameter) {
                     Wirte a Confession
                   </Link>
                 </div>
-
-
               </div>
 
-
               <div className="flex flex-row items-center justify-center p-8">
-                <Image
-                  src={G}
-                  alt="Loading...."
-                  className="rounded-md"
-                ></Image>
+                <Image src={G} alt="Loading...." className="rounded-md"></Image>
                 {/* <Image src={G} alt="Loading...." className=""></Image> */}
               </div>
             </div>
           </div>
-
 
           <div className="flex flex-col w-full md:w-[50%] lg:w-[50%] h-screen">
             <div className="h-[78%] overflow-auto">
@@ -197,9 +192,8 @@ export default function Home(obj: parameter) {
                 );
               })}
             </div>
-            
+
             <div className="flex flex-row m-4 rounded-md ">
-              
               <div className="w-[90%] h-[50px] bg-red-400 p-2 mr-2 border-[2px] font-[600] border-black justify-center items-center rounded-md">
                 <input
                   type="text"

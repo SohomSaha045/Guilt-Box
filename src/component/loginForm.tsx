@@ -70,7 +70,7 @@ export function LoginForm(props: any) {
     console.log("Form submitted");
   };
   return (
-    <div className="max-w-md w-full rounded-md md:rounded-xl p-4 md:p-6 lg:p-6 shadow-input mx-auto dark:bg-black border-2 border-black">
+    <div className="max-w-md w-full rounded-lg md:rounded-xl p-4 md:p-6 lg:p-6 shadow-input mx-auto dark:bg-black border-2 border-black">
       {loading == true ? (
         <div className="h-full  m-auto justify-center">
           <Loader></Loader>

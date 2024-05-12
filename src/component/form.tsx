@@ -87,7 +87,7 @@ export function SignupFormDemo(props: any) {
     console.log("Form submitted");
   };
   return (
-    <div className="max-w-md w-full mx-auto rounded-none md:rounded-2xl  md:p-6 shadow-input  dark:bg-black border-2 border-black">
+    <div className="max-w-md w-full mx-auto rounded-lg md:rounded-2xl shadow-input p-4 md:p-6 dark:bg-black border-2 border-black">
       <h2 className="font-bold text-xl text-neutral-800 dark:text-neutral-200">
         Welcome _IMPO$TER.
       </h2>

@@ -33,28 +33,34 @@ export default function Home() {
         </div>
       ) : (
         <div className="flex flex-col w-full h-screen">
-          <div className="flex flex-row h-[30%] w-full items-center justify-center">
-            <div className="">
+
+
+          <div className="flex flex-col md:flex-row lg:flex-row max-h-auto min-h-[220px] w-full items-center justify-center text-wrap">
+            <div className="pl-3 pr-3">
               <Image
                 src={imposter}
                 alt="Imposter"
-                className="inline h-full"
-              ></Image>{" "}
+                className="inline h-[48px] md:h-[50px] lg:h-[84px]"
+              ></Image>
             </div>
-            <div className="text-[90px] font-[600] font-mono inline pt-6 pl-6  text-black">
-              {" "}
+
+
+            <div className="text-[34px] md:text-[44px] lg:text-[84px] font-[400] font-mono inline md:mt-4 lg:mt-6 text-center text-black">
+              
               YOUR INSTITUTE
             </div>
           </div>
+
+
           <div className="flex flex-row w-full justify-around items-center p-8 mt-0 h-[70%]">
-            <div className="p-8 m-0  items-center justify-around my-auto">
+            <div className="p-8 m-0 w-[40%] items-center justify-end my-auto hidden md:flex ld:flex">
               <Image
                 src={doodle}
                 alt="among-doodle"
                 className="h-[280px]"
               ></Image>
             </div>
-            <div className=" h-[100%] w-[32%]  p-0 m-0">
+            <div className=" h-[100%] w-[95%] md:w-[50%] lg:w-[65%]  p-0 m-0">
               <LoginForm college={college}></LoginForm>
             </div>
           </div>

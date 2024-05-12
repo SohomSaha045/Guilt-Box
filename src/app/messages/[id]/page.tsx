@@ -43,7 +43,7 @@ export default function Home(obj: parameter) {
         {
           withCredentials: true,
           headers: {
-            'Authorization': `${d}`,
+            Authorization: `${d}`,
             "Content-Type": "application/json",
           },
         }
@@ -73,7 +73,7 @@ export default function Home(obj: parameter) {
         {
           withCredentials: true,
           headers: {
-            'Authorization': `${d}`,
+            Authorization: `${d}`,
             "Content-Type": "application/json",
           },
         }
@@ -95,7 +95,7 @@ export default function Home(obj: parameter) {
       {
         withCredentials: true,
         headers: {
-          'Authorization': `${d}`,
+          Authorization: `${d}`,
           "Content-Type": "application/json",
         },
       }
@@ -119,28 +119,31 @@ export default function Home(obj: parameter) {
   return (
     // bg-gradient-to-r from-violet-500 to-fuchsia-500
     <div
-      className="flex min-h-screen flex-row   p-0 
+      className="flex min-h-screen flex-col md:flex-row lg:flex-row p-0 
       bg-gradient-to-r from-[#fdfcfb] to-[#e2d1c3]"
     >
-      
       {loading == true ? (
         <div className="h-full  m-auto justify-center">
           <Loader></Loader>
         </div>
       ) : (
         <>
-          <div className="h-screen w-[60%]  m-0 flex flex-col">
-            <div className="h-[55%] bg-blue-200 mt-16 mx-8 border-2 border-black rounded-md p-4 font-[600] outline shadow-inner shadow-[0_35px_60px_-15px_rgba(0,0,0,0.3)] overflow-auto p-6 ">
+          <div className="h-screen w-full md:w-[50%] m-0 flex flex-col">
+            <div className="h-[55%] bg-blue-2 00 mt-16 mx-8 border-2 border-black rounded-md p-4 font-[600] outline shadow-[0_35px_60px_-15px_rgba(0,0,0,0.3)] overflow-auto">
               {/* <div>{context.message}</div> */}
-              <div>{mess}</div>
-              <div className="flex text-right items-end bottom-0 mt-4 p-0 width-auto ">
-                <h2 className="ml-auto mr-0 p-2">- Anonymous</h2>
+              <div className="w-full flex justify-between pl-2 pr-2 items-start">
+                <div className="w-[80%]"> {mess} </div>
+                <h2 className="w-[20%] ml-auto mr-0 p-0">- Anonymous</h2>
               </div>
             </div>
             <div className="flex flex-col">
-              <div className="flex flex-row m-8 justify-center items-center">
-                <div className="flex flex-row justify-center items-center text-lg font-[800] mx-4 py-2 px-4 bg-red-400 rounded-lg border-[3px] border-black hover:cursor-pointer">
-                  <Link href="/messages" className="flex flex-row">
+
+
+              <div className="w-full flex flex-row pt-5 pl-5 pr-5 justify-center items-center">
+
+
+                <div className="w-[50%] flex flex-row justify-center items-center text-lg font-[800] mx-4 py-2 px-4 bg-red-400 rounded-lg border-[3px] border-black hover:cursor-pointer">
+                  <Link href="/messages" className="flex flex-row justify-center items-center">
                     <Image
                       src={hand}
                       alt="makrer"
@@ -149,8 +152,10 @@ export default function Home(obj: parameter) {
                     See all Confession
                   </Link>
                 </div>
-                <div className="flex flex-row justify-center items-center text-lg font-[800] mx-4 py-2 px-4 bg-red-400 rounded-lg border-[3px] border-black hover:cursor-pointer ">
-                  <Link href="/write" className="flex flex-row">
+
+
+                <div className="w-[50%] flex flex-row justify-center items-center text-lg font-[800] mx-4 py-2 px-4 bg-red-400 rounded-lg border-[3px] border-black hover:cursor-pointer ">
+                  <Link href="/write" className="flex flex-row justify-center items-center">
                     <Image
                       src={write}
                       alt="makrer"
@@ -159,14 +164,24 @@ export default function Home(obj: parameter) {
                     Wirte a Confession
                   </Link>
                 </div>
+
+
               </div>
+
+
               <div className="flex flex-row items-center justify-center p-8">
-                <Image src={G} alt="Loading...." className="rounded-md"></Image>
+                <Image
+                  src={G}
+                  alt="Loading...."
+                  className="rounded-md"
+                ></Image>
                 {/* <Image src={G} alt="Loading...." className=""></Image> */}
               </div>
             </div>
           </div>
-          <div className=" flex flex-col w-[45%] h-screen h-32">
+
+
+          <div className="flex flex-col w-full md:w-[50%] lg:w-[50%] h-screen">
             <div className="h-[78%] overflow-auto">
               <div className="p-4 font-[800] mt-8 mb-4">{`Comments (${comment.length})`}</div>
               {comment.map((item: com) => {

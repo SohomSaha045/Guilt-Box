@@ -58,11 +58,11 @@ export default function Home() {
         </div>
       ) : (
         <>
-          <h2 className="text-[34px] md:text-[64px] lg:text-[80px] text-center word-wrap font-[400] font-mono inline pl-6 pr-6 mt-3  text-black">
+          <h2 className="text-[34px] md:text-[64px] lg:text-[80px] text-center word-wrap font-[400] font-mono inline pl-6 pr-6 mt-3 text-black">
             Welcome to GUILT BOX
           </h2>
-          <div className="p-10 w-full ">
-            <div className="grid gap-12 md:grid-cols-2 lg:grid-cols-3 items-center">
+          <div className="p-6 w-full ">
+            <div className="grid gap-12 grid-cols-1 md:grid-cols-2 lg:grid-cols-3 items-center">
               {messages.map((data: any) => {
                 var text: string = data.message;
                 let id: string = data._id;
@@ -74,7 +74,7 @@ export default function Home() {
                     }}
                     key={id}
                   >
-                    <div className="h-[200px] overflow-y-scroll w-auto bg-blue-100 border-2 border-black rounded-md p-4 font-[600] outline shadow-inner shadow-[0_35px_60px_-15px_rgba(0,0,0,0.3)] hover:bg-blue-300 hover:cursor-pointer">
+                    <div className="h-[200px] overflow-y-scroll w-auto bg-blue-100 border-2 border-black rounded-md p-4 font-[600] outline shadow-[0_35px_60px_-15px_rgba(0,0,0,0.3)] hover:bg-blue-300 hover:cursor-pointer">
                       <div className="h-[88%]">
                         {text.slice(0, 300) === text
                           ? text

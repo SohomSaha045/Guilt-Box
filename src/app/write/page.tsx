@@ -56,14 +56,16 @@ export default function Home() {
   return (
     // bg-gradient-to-r from-violet-500 to-fuchsia-500
     <div
-      className="flex h-screen flex-col items-center  p-0 
+      className="flex min-h-screen flex-col items-center  p-0 
       bg-gradient-to-r from-[#fdfcfb] to-[#e2d1c3]"
     >
-      <div className=" flex flex-col h-[40%] w-[100%]  justify-center m-0 p-12 pb-0">
-        <div className=" w-auto m-auto p-0 text-[60px] font-[900] ">
+      <div className=" flex flex-col h-[60%] w-[100%]  justify-center m-0 p-12 pb-0">
+
+        <div className=" w-auto m-auto p-0 text-[34px] md:text[40px] lg:text-[60px] font-[900] text-center">
           Guilt-Box 🔥
         </div>
-        <div className="m-auto max-w-[90%] pt-8 font-[800] text-[17px] text-center">
+
+        <div className="m-auto max-w-[90%] pt-8 font-semibold text-[17px] text-center">
           Welcome to Guilt-Box, the ultimate platform where you can liberate
           your secrets, and stories about your Organization. <br /> Whether you
           have a deep, dark confession on your mind or a heartwarming tale
@@ -72,29 +74,33 @@ export default function Home() {
           <span className="text-[22px]">🤫🤫🤫</span>
         </div>
       </div>
-      <div className="relative flex flex-row h-[60%] w-[100%] justify-center">
-        <div className=" realtive flex flex-col h-auto m-6  w-[80%] bg-blue-400 border rounded-lg border-black border-2 ">
+
+
+      <div className="relative flex flex-row w-[100%] justify-center">
+        <div className=" realtive flex flex-col h-auto m-6  w-[80%] bg-blue-400 rounded-lg border-black border-2 ">
           <textarea
-            className="h-[90%]  w-[100%] bg-blue-400 focus:outline-none p-4 text-[16px] font-[600] rounded-lg z-10"
+            className="h-full w-[100%] bg-blue-400 focus:outline-none p-4 text-[16px] font-[400] rounded-lg z-10"
             value={inputStr}
             onChange={(e) => setStr(e.target.value)}
-            rows={45} cols={40}
+            rows={10} cols={40}
             
           />
           {showPicker && (
-            <div className="absolute left-20 bottom-20 z-50">
-               <Picker   onEmojiClick={onEmoji}  className="" />
+            <div className="absolute left-5 bottom-[100px] z-50">
+               <Picker onEmojiClick={onEmoji} className="" />
             </div>
            
           )}
-          <div className="relative h-[10%] flex flex-row items-center justify-between">
+          <div className="relative h-[10%] flex flex-row items-center justify-between pl-6 pr-6 mb-6">
 
-          <Image src={smile}  alt="Emoji" className=" h-[40px] w-[40px] m-2 p-1 hover:cursor-pointer " onClick={() => setShowPicker((val) => !val)}></Image>
-          <Image src={post} alt="POST" className=" h-[40px] w-[40px] m-2 p-1 hover:cursor-pointer " onClick={submit} ></Image>
+            <Image src={smile}  alt="Emoji" className=" h-[40px] w-[40px] m-2 p-1 hover:cursor-pointer " onClick={() => setShowPicker((val) => !val)}></Image>
+            <Image src={post} alt="POST" className=" h-[40px] w-[40px] m-2 p-1 hover:cursor-pointer " onClick={submit} ></Image>
           </div>
           
         </div>
       </div>
+
+
     </div>
   );
 }
